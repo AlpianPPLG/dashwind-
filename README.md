@@ -503,7 +503,7 @@ SOFTWARE.
 ## 👨‍💻 Author
 
 <div align="center">
-  <img src="https://github.com/AlpianPPLG" width="100" height="100" style="border-radius: 50%;" alt="Alpian" />
+  <img src="https://github.com/AlpianPPLG.png" width="100" height="100" style="border-radius: 50%;" alt="Alpian" />
   
   **Alpian**
   
