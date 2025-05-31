@@ -8,14 +8,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { DashboardHeader } from "@/components/dashboard/dashboard-header";
-import { StatsCards } from "@/components/dashboard/stats-cards";
-import { RecentActivity } from "@/components/dashboard/recent-activity";
-import { AnalyticsChart } from "@/components/dashboard/analytics-chart";
-import { TopProducts } from "@/components/dashboard/top-products";
-import { DashboardFooter } from "@/components/dashboard/dashboard-footer";
+import { MessagesHeader } from "@/components/messages/messages-header";
+import { ConversationList } from "@/components/messages/conversation-list";
+import { ChatArea } from "@/components/messages/chat-area";
+import { MessagesSidebar } from "@/components/messages/messages-sidebar";
 
-export default function DashboardPage() {
+export default function MessagesPage() {
   return (
     <SidebarInset>
       <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -25,30 +23,28 @@ export default function DashboardPage() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Admin Panel</BreadcrumbLink>
+                <BreadcrumbLink href="/">Admin Panel</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage>Dashboard</BreadcrumbPage>
+                <BreadcrumbPage>Messages</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
       </header>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <DashboardHeader />
-        <StatsCards />
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+        <MessagesHeader />
+        <div className="grid gap-4 md:grid-cols-4 h-[calc(100vh-200px)]">
+          <div className="md:col-span-1">
+            <ConversationList />
+          </div>
           <div className="md:col-span-2">
-            <AnalyticsChart />
+            <ChatArea />
           </div>
-          <div>
-            <RecentActivity />
+          <div className="md:col-span-1">
+            <MessagesSidebar />
           </div>
-        </div>
-        <div className="grid auto-rows-min gap-4 md:grid-cols-2">
-          <TopProducts />
-          <DashboardFooter />
         </div>
       </div>
     </SidebarInset>

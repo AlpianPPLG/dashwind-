@@ -8,14 +8,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { DashboardHeader } from "@/components/dashboard/dashboard-header";
-import { StatsCards } from "@/components/dashboard/stats-cards";
-import { RecentActivity } from "@/components/dashboard/recent-activity";
-import { AnalyticsChart } from "@/components/dashboard/analytics-chart";
-import { TopProducts } from "@/components/dashboard/top-products";
-import { DashboardFooter } from "@/components/dashboard/dashboard-footer";
+import { UsersTable } from "@/components/users/users-table";
+import { UsersHeader } from "@/components/users/users-header";
 
-export default function DashboardPage() {
+export default function UsersPage() {
   return (
     <SidebarInset>
       <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -25,31 +21,19 @@ export default function DashboardPage() {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">Admin Panel</BreadcrumbLink>
+                <BreadcrumbLink href="/">Admin Panel</BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage>Dashboard</BreadcrumbPage>
+                <BreadcrumbPage>Users</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
       </header>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <DashboardHeader />
-        <StatsCards />
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="md:col-span-2">
-            <AnalyticsChart />
-          </div>
-          <div>
-            <RecentActivity />
-          </div>
-        </div>
-        <div className="grid auto-rows-min gap-4 md:grid-cols-2">
-          <TopProducts />
-          <DashboardFooter />
-        </div>
+        <UsersHeader />
+        <UsersTable />
       </div>
     </SidebarInset>
   );
